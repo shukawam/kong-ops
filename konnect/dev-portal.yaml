@@ -1,0 +1,11 @@
+portals:
+  - ref: shukawam-dev-portal
+    name: shukawam-dev-portal
+    display_name: shukawam dev portal
+    description: Dev Portal for shukawam demo.
+    authentication_enabled: true
+    rbac_enabled: false
+    default_api_visibility: private
+    default_page_visibility: private
+    auto_approve_developers: false
+    auto_approve_applications: false

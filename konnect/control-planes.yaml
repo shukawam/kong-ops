@@ -1,11 +1,4 @@
 control_planes:
-  - ref: kong-ingress-controller
-    name: kong-ingress-controller
-    description: Kong Ingress Controller(a.k.a. KIC) running on EKS.
-    auth_type: pki_client_certs
-    cluster_type: CLUSTER_TYPE_K8S_INGRESS_CONTROLLER
-    labels:
-      environment: aws
   - ref: local-gateway
     name: local-gateway
     description: Kong Gateway running on local machine(M4 Mac).
@@ -13,3 +6,19 @@ control_planes:
     cluster_type: CLUSTER_TYPE_CONTROL_PLANE
     labels:
       environment: local
+  - ref: kubernetes-gateway-control-plane
+    name: kubernetes-gateway-control-plane
+    description: Kong Gateway running on Kubernetes.
+    auth_type: pki_client_certs
+    cluster_type: CLUSTER_TYPE_CONTROL_PLANE
+    labels:
+      environment: azure
+      service: aks
+  - ref: azure-container-app-control-plane
+    name: azure-container-app-control-plane
+    description: Kong Gateway running on ACA.
+    auth_type: pki_client_certs
+    cluster_type: CLUSTER_TYPE_CONTROL_PLANE
+    labels:
+      environment: azure
+      service: azure-container-apps
