@@ -22,3 +22,10 @@ control_planes:
     labels:
       environment: azure
       service: azure-container-apps
+  - ref: gorilla-store
+    name: gorilla-store
+    description: Kong Gateway for Gorilla Store.
+    auth_type: pki_client_certs
+    cluster_ty[e: CLUSTER_TYPE_CONTROL_PLANE
+    labels:
+      environment: local
