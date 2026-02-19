@@ -1,3 +1,7 @@
+_defaults:
+  kongctl:
+    namespace: shukawam
+
 control_planes:
   - ref: local-gateway
     name: local-gateway
@@ -29,3 +33,19 @@ control_planes:
     cluster_type: CLUSTER_TYPE_CONTROL_PLANE
     labels:
       environment: local
+  - ref: gemini-gateway
+    name: gemini-gateway
+    description: Kong Gateway
+    auth_type: pki_client_certs
+    cluster_type: CLUSTER_TYPE_CONTROL_PLANE
+    labels:
+      environment: local
+      customer: gemini
+  - ref: toshogu-gateway
+    name: toshogu-gateway
+    description: Kong Gateway
+    auth_type: pki_client_certs
+    cluster_type: CLUSTER_TYPE_CONTROL_PLANE
+    labels:
+      environment: local
+      customer: toshogu

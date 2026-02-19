@@ -1,0 +1,67 @@
+_defaults:
+  kongctl:
+    namespace: shukawam
+
+apis:
+  - ref: catalogue-api
+    name: !file portals/apis/catalogue/openapi.yaml#info.title
+    description: !file portals/apis/catalogue/openapi.yaml#info.description
+    version: "1.0.0"
+    labels:
+      app: gorilla-store
+    versions:
+      - ref: catalogue-api-v1
+        version: !file portals/apis/catalogue/openapi.yaml#info.version
+        spec: !file portals/apis/catalogue/openapi.yaml
+    documents:
+      - ref: catalogue-api-getting-started
+        title: Getting Started
+        slug: catalogue-api-getting-started
+        status: published
+        content: !file portals/docs/catalogue_ja.md
+    publications:
+      - ref: catalogue-api-v1-publication
+        portal_id: !ref shukawam-dev-portal#id
+        visibility: private
+  
+  - ref: cart-api
+    name: !file portals/apis/cart/openapi.yaml#info.title
+    description: !file portals/apis/cart/openapi.yaml#info.description
+    version: "1.0.0"
+    labels:
+      app: gorilla-store
+    versions:
+      - ref: cart-api-v1
+        version: !file portals/apis/cart/openapi.yaml#info.version
+        spec: !file portals/apis/cart/openapi.yaml
+    documents:
+      - ref: cart-api-getting-started
+        title: Getting Started
+        slug: cart-api-getting-started
+        status: published
+        content: !file portals/docs/cart_ja.md
+    publications:
+      - ref: cart-api-v1-publication
+        portal_id: !ref shukawam-dev-portal#id
+        visibility: private
+  
+  - ref: order-api
+    name: !file portals/apis/order/openapi.yaml#info.title
+    description: !file portals/apis/order/openapi.yaml#info.description
+    version: "1.0.0"
+    labels:
+      app: gorilla-store
+    versions:
+      - ref: order-api-v1
+        version: !file portals/apis/order/openapi.yaml#info.version
+        spec: !file portals/apis/order/openapi.yaml
+    documents:
+      - ref: order-api-getting-started
+        title: Getting Started
+        slug: order-api-getting-started
+        status: published
+        content: !file portals/docs/order_ja.md
+    publications:
+      - ref: order-api-v1-publication
+        portal_id: !ref shukawam-dev-portal#id
+        visibility: private
