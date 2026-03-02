@@ -49,3 +49,10 @@ control_planes:
     labels:
       environment: local
       customer: toshogu
+  - ref: poc-gateway
+    name: poc-gateway
+    description: Kong Gateway
+    auth_type: pki_client_certs
+    cluster_type: CLUSTER_TYPE_CONTROL_PLANE
+    labels:
+      environment: local
