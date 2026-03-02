@@ -24,12 +24,10 @@ jobs:
         run: |
           kongctl plan \
             -f konnect \
-            --recursive \
             --pat ${{ secrets.KONNECT_TOKEN }}
       - name: Sync Konnect settings
         run: |
           kongctl sync \
             -f konnect \
-            --recursive \
             --pat ${{ secrets.KONNECT_TOKEN }} \
             --auto-approve
