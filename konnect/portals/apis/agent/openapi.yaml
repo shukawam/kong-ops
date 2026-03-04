@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  title: Agent API
+  description: Agent API for kong microservices demo application
+  version: 0.1.1
+  contact:
+    name: Shuhei Kawamura
+    email: shuhei.kawamura@konghq.com
+servers:
+  - url: http://agent:3003
+    description: Local development server
+tags:
+  - name: agent
+    description: Endpoints related to the ai-agent
+paths:
+  /agent:
+    post:
+      operationId: generate-agent-response
+      summary: Generate agent response
+      description: Generate agent response
+      tags:
+        - agent
+      responses:
+        "201":
+          description: A list of items in the cart
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/agent"
+components:
+  schemas:
+    agent:
+      type: object
+      properties:
+        response:
+          type: string

@@ -1,6 +1,6 @@
 ---
 title: Menu
-description: Sidebar for Toshogu Dev Portal
+description: Sidebar for Gorilla Store Dev Portal
 ---
 
 ::snippet

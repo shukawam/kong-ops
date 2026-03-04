@@ -9,6 +9,11 @@ apis:
     version: "1.0.0"
     labels:
       app: gorilla-store
+    attributes:
+      app:
+        - gorilla-store
+      tier:
+        - free
     versions:
       - ref: catalogue-api-v1
         version: !file portals/apis/catalogue/openapi.yaml#info.version
@@ -30,6 +35,11 @@ apis:
     version: "1.0.0"
     labels:
       app: gorilla-store
+    attributes:
+      app:
+        - gorilla-store
+      tier:
+        - free
     versions:
       - ref: cart-api-v1
         version: !file portals/apis/cart/openapi.yaml#info.version
@@ -51,6 +61,11 @@ apis:
     version: "1.0.0"
     labels:
       app: gorilla-store
+    attributes:
+      app:
+        - gorilla-store
+      tier:
+        - free
     versions:
       - ref: order-api-v1
         version: !file portals/apis/order/openapi.yaml#info.version
@@ -63,5 +78,31 @@ apis:
         content: !file portals/docs/order_ja.md
     publications:
       - ref: order-api-v1-publication
+        portal_id: !ref shukawam-dev-portal#id
+        visibility: private
+
+  - ref: agent-api
+    name: !file portals/apis/agent/openapi.yaml#info.title
+    description: !file portals/apis/agent/openapi.yaml#info.description
+    version: "0.1.1"
+    labels:
+      app: gorilla-store
+    attributes:
+      app:
+        - gorilla-store
+      tier:
+        - premium
+    versions:
+      - ref: agent-api-v1
+        version: !file portals/apis/agent/openapi.yaml#info.version
+        spec: !file portals/apis/agent/openapi.yaml
+    documents:
+      - ref: agent-api-getting-started
+        title: Getting Started
+        slug: agent-api-getting-started
+        status: published
+        content: !file portals/docs/agent_ja.md
+    publications:
+      - ref: agent-api-v1-publication
         portal_id: !ref shukawam-dev-portal#id
         visibility: private
