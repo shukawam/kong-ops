@@ -62,3 +62,10 @@ control_planes:
     cluster_type: CLUSTER_TYPE_CONTROL_PLANE
     labels:
       environment: local
+  - ref: bankong-gateway
+    name: bankong-gateway
+    description: Kong Gateway for BanKonG
+    auth_type: pki_client_certs
+    cluster_type: CLUSTER_TYPE_CONTROL_PLANE
+    labels:
+      environment: local
